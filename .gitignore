@@ -48,6 +48,7 @@ buildNumber.properties
 .idea/
 *.iml
 *.iws
+**/.attach_pid*
 ### END
 
 ### https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
@@ -121,3 +122,7 @@ Temporary Items
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 ### END
+
+**/*.jpg
+**/*.png
+**/*.jpeg
