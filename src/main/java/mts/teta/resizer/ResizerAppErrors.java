@@ -8,8 +8,11 @@ public interface ResizerAppErrors {
 	/*	======== ARGUMENT VALIDATION FATAL ERRORS ========	*/
 	String INV_EXTENSION = "Invalid inputFile extension. Can be only 'jpeg' or 'png'!";
 	String INV_FORMAT = "Invalid format specified. Can be only 'jpeg' or 'png'!";
+//	String INV_QUALITY = "Invalid quality specified. Has to be in range of 1 and 100 (inclusively).";
+	String INV_QUALITY = "Please check params!";
 
-	/*	======== ARGUMENT VALIDATION WARNINGS ========	*/
-	String WARN_QUALITY_TOO_HIGH = "WARNING! Specified quality is too HIGH! Setting it to 100.";
-	String WARN_QUALITY_TOO_LOW = "WARNING! Specified quality is too LOW! Setting it to 1.";
+//
+//	/*	======== ARGUMENT VALIDATION WARNINGS ========	*/
+//	String WARN_QUALITY_TOO_HIGH = "WARNING! Specified quality is too HIGH! Setting it to 100.";
+//	String WARN_QUALITY_TOO_LOW = "WARNING! Specified quality is too LOW! Setting it to 1.";
 }

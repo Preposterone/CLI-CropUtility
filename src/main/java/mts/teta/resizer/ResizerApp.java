@@ -41,13 +41,9 @@ public class ResizerApp extends ConsoleAttributes implements Callable<Integer> {
 			if (config.getInputFile().exists() && !isImageExtValid(config.getInputFile().getName()))	{
 				throw new BadAttributesException(INV_EXTENSION);
 			}
-			/*	If quality is less than 1 or more than 100, print warning and set it to 1 or 100	*/
-			if (config.getQuality() > QUALITY_MAX) {
-				System.out.println(WARN_QUALITY_TOO_HIGH);
-				config.setQuality(QUALITY_MAX);
-			} else if (config.getQuality() < QUALITY_MIN){
-				System.out.println(WARN_QUALITY_TOO_LOW);
-				config.setQuality(QUALITY_MIN);
+			/*	Throw BadAttributesException if specified quality doesn't fit the boundaries	*/
+			if (config.getQuality() > QUALITY_MAX || config.getQuality() < QUALITY_MIN) {
+				throw new BadAttributesException(INV_QUALITY);
 			}
 			/*	Verify specified format, can be only 'jpg', 'jpeg' or 'png'	*/
 			if (!config.getFormat().equalsIgnoreCase("png") && !config.getFormat().equalsIgnoreCase("jpg") && !config.getFormat().equalsIgnoreCase("jpeg"))	{
@@ -56,10 +52,8 @@ public class ResizerApp extends ConsoleAttributes implements Callable<Integer> {
 			/*	If outputFile has valid format specified in its name, override format 	*/
 			if (isImageExtValid(config.getOutputFile()))	{
 				config.setFormat(config.getOutputFile().substring(config.getOutputFile().lastIndexOf(".") + 1));
-//				System.out.println("ARG_Verifier, format from OutputFile: "+config.getFormat());	//debug
 				config.setOutputFileFull(new File(config.getOutputFile()));
 			}	else	{	/*	If not - concat outputFile and format	*/
-//				System.out.println("ARG_Verifier, format from config: "+config.getFormat());	//debug
 				config.setOutputFileFull(new File(config.getOutputFile() + "." + config.getFormat()));
 			}
 		}
