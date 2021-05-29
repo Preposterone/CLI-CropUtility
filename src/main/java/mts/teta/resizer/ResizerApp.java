@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
 
 @CommandLine.Command(
 		name = "resizer", version = "resizer 1.0",
-		headerHeading = "Version: resizer 1.0 https://github.com/Preposterone/mt_teta_backend2_ccrr.git%n",
+		headerHeading = "Version: resizer 1.0 https://github.com/Preposterone/mts_teta_backend2_ccrr%n",
 		sortOptions = false, separator = " ",
 		synopsisHeading = "Available formats: jpeg png%nUsage: convert input-file [options ...] output-file%n",
 		customSynopsis = {"Options Settings:"}
