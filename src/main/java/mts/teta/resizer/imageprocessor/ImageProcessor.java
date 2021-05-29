@@ -43,14 +43,14 @@ public class ImageProcessor extends ResizerFlags {
 		}
 		if (doCrop(this.getFlags()))	{
 			MarvinImage marvinIn = MarvinImageIO.loadImage(config.getOutputFileFull().getAbsolutePath());
-			MarvinImage marvinOut = new MarvinImage();
+			MarvinImage marvinOut = new MarvinImage(config.getCropWidth(), config.getCropHeight());
 			crop(marvinIn, marvinOut, config.getCropX(), config.getCropY(), config.getCropWidth(),
 					config.getCropHeight());
 			MarvinImageIO.saveImage(marvinOut, config.getOutputFileFull().getAbsolutePath());
 		}
 		if (doBlur(this.getFlags()))	{
 			MarvinImage marvinIn = MarvinImageIO.loadImage(config.getOutputFileFull().getAbsolutePath());
-			MarvinImage marvinOut = new MarvinImage();
+			MarvinImage marvinOut = new MarvinImage(marvinIn.getWidth(), marvinIn.getHeight());
 			gaussianBlur(marvinIn, marvinOut, config.getBlurRadius());
 			MarvinImageIO.saveImage(marvinOut, config.getOutputFileFull().getAbsolutePath());
 		}

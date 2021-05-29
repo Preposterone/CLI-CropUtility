@@ -11,8 +11,7 @@ public interface ResizerAppErrors {
 //	String INV_QUALITY = "Invalid quality specified. Has to be in range of 1 and 100 (inclusively).";
 	String INV_QUALITY = "Please check params!";
 
-//
-//	/*	======== ARGUMENT VALIDATION WARNINGS ========	*/
+//	/*	======== ARGUMENT VALIDATION WARNINGS ========	*/ //unused
 //	String WARN_QUALITY_TOO_HIGH = "WARNING! Specified quality is too HIGH! Setting it to 100.";
 //	String WARN_QUALITY_TOO_LOW = "WARNING! Specified quality is too LOW! Setting it to 1.";
 }
